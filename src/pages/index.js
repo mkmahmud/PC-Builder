@@ -1,11 +1,7 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import RootLayout from "@/component/layout/RootLayout";
 import ProductCard from "@/component/ProductCard/ProductCard";
 import { Button } from "antd";
 import Link from "next/link";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function HomePage({ products, category }) {
   return (
@@ -15,7 +11,7 @@ export default function HomePage({ products, category }) {
         <div className="grid grid-cols-4 md:grid-cols-8 gap-4 my-4">
           {category &&
             category?.map((cate) => (
-              <Button type="dashed" ghost>
+              <Button type="dashed" ghost key={cate._id}>
                 <Link rel="noopener noreferrer" href={`categories/${cate.Category}`}>
                   {cate.Category}
                 </Link>
@@ -25,7 +21,7 @@ export default function HomePage({ products, category }) {
         <div className="grid md:grid-cols-4 gap-4">
           {products &&
             products?.map((product) => (
-              <ProductCard product={product} key={product.id}></ProductCard>
+              <ProductCard product={product} key={product._id}></ProductCard>
             ))}
         </div>
       </div>

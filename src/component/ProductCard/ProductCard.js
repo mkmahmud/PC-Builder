@@ -5,7 +5,7 @@ import Link from "next/link";
 const { Meta } = Card;
 const ProductCard = ({ product }) => {
   const {
-    id,
+    _id,
     Image: img,
     ProductName,
     Category,
@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
       style={{
         width: "100%",
         margin: "auto",
-        position:"relative"
+        position: "relative",
       }}
       cover={<Image src={img} alt={img} height={200} width={200}></Image>}
     >
@@ -33,17 +33,18 @@ const ProductCard = ({ product }) => {
         </h3>
       </div>
       <div className="">
-        <h3 className="">
-         Rating: {Rating}
-        </h3>
+        <h3 className="">Rating: {Rating}</h3>
         <h3 className=" ">
-          {
-            Status ? <strong className="text-green-500">In Stock</strong> : <strong className="text-red-500">Out of Stock</strong>
-          }
+          {Status ? (
+            <strong className="text-green-500">In Stock</strong>
+          ) : (
+            <strong className="text-red-500">Out of Stock</strong>
+          )}
         </h3>
       </div>
-      <Button type="primary" size="large " className="w-full"><Link href={`/product/${id}`}>Details</Link></Button>
-
+      <Button type="primary" size="large " className="w-full">
+        <Link href={`/product/${_id}`}>Details</Link>
+      </Button>
     </Card>
   );
 };
