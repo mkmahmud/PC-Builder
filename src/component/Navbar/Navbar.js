@@ -4,6 +4,34 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import logo from "../../assets/logo.png";
+import { DownOutlined, SmileOutlined } from '@ant-design/icons';
+import { Dropdown, Space } from 'antd';
+
+const mycategories = [
+  "CPU or Processor",
+  "Motherboard",
+  "RAM",
+  "Power Supply Unit",
+  "Storage Device",
+  "Monitor",
+  "Others",
+];
+
+let items = [];
+
+mycategories.map((category) => {
+  items.push({
+    key: "1",
+    label: (
+      <Link
+        rel="noopener noreferrer"
+        href={`categories/${category}`}
+      >
+        {category}
+      </Link>
+    ),
+  });
+});
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,10 +61,19 @@ const Navbar = () => {
                 About
               </Link>
             </li>
-            <li className=" block p-2 mx-2 bg-blue-400">
-              <Link href="/categories" className="text-white ">
-                Categories
-              </Link>
+            <li className=" relative block p-2 mx-2 bg-blue-400 ">
+              <Dropdown
+                menu={{
+                  items,
+                }}
+              >
+                <a onClick={(e) => e.preventDefault()}>
+                  <Space>
+                    Categories
+                    <DownOutlined />
+                  </Space>
+                </a>
+              </Dropdown>
             </li>
             <li className=" block p-2 mx-2 bg-blue-400">
               <Link href="/contact" className="text-white ">
@@ -45,7 +82,10 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <Link href="/contact" className="text-white bg-red-800 block p-2 no-underline ">
+        <Link
+          href="/contact"
+          className="text-white bg-red-800 block p-2 no-underline "
+        >
           PC BUILD
         </Link>
 

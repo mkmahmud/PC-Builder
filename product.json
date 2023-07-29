@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "Image": "https://stech.com.bd/wp-content/uploads/2022/10/1665143311_s-l1600.jpg",
+    "ProductName": "Samsang DDR4 Ram ",
+    "Category": "RAM",
+    "Price": 90,
+    "Status": true,
+    "Rating": 4
+  },
+
+  {
+    "id": 2,
+    "Image": "https://www.startech.com.bd/image/cache/catalog/monitor/xiaomi/redmi/redmi-01-500x500.jpg",
+    "ProductName": "Xiaomi Redmi RMMNT27NF 27 FHD IPS Monitor",
+    "Category": "Monitor",
+    "Price": 90,
+    "Status": true,
+    "Rating": 4
+  },
+
+  {
+    "id": 3,
+    "Image": "https://storage-asset.msi.com/global/picture/image/feature/mb/B650M/PRO-B650M-A-WIFI/block03.png",
+    "ProductName": "PRO B650M-A WIFI ",
+    "Category": "Motherboard",
+    "Price": 50,
+    "Status": true,
+    "Rating": 5
+  },
+
+  {
+    "id": 4,
+    "Image": "https://www.startech.com.bd/image/cache/catalog/processor/Intel/core-i9-13900k/core-i9-13900k-01-500x500.webp",
+    "ProductName": "Intel 13th Gen Core i9 13900K Raptor Lake Processor",
+    "Category": "CPU",
+    "Price": 220,
+    "Status": true,
+    "Rating": 5
+  },
+  {
+    "id": 5,
+    "Image": "https://m.media-amazon.com/images/I/71HEQ9FBF9L._AC_UF894,1000_QL80_.jpg",
+    "ProductName": "MSI MPG A650GF Gaming Power Supply",
+    "Category": "PowerSupply",
+    "Price": 60,
+    "Status": true,
+    "Rating": 5
+  },
+  {
+    "id": 6,
+    "Image": "https://i.pcmag.com/imagery/reviews/054WFdyf5hQtSy8X5JS64vC-2.fit_lim.size_840x473.v1635540933.jpg",
+    "ProductName": "PCI Express NVMe Solid State Drives (SSDs) ",
+    "Category": "StorageDevice",
+    "Price": 30,
+    "Status": true,
+    "Rating": 4
+  },
+  {
+    "id": 7,
+    "Image": "https://seegate.com.bd/image/cache/catalog/Accessories/Keyboard/rapoo-x9310-wireless-ultra-slim-aluminum-alloy-keyboard-mouse-combo-500x500.jpg",
+    "ProductName": "Rapoo X9310 Wireless Ultra Slim Aluminum Alloy Keyboard Mouse Combo",
+    "Category": "others",
+    "Price": 26,
+    "Status": false,
+    "Rating": 5
+  }
+]
