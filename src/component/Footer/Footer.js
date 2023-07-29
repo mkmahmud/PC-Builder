@@ -1,12 +1,14 @@
+import React from "react";
+import { Layout } from "antd";
 
-import React from 'react';
+const { Footer: MyFooter } = Layout;
 
 const Footer = () => {
-    return (
-        <div>
-            Footer
-        </div>
-    );
+  return (
+    <MyFooter style={{ textAlign: "center" }}>
+      PC Builder ©2023 Created by PC Builder
+    </MyFooter>
+  );
 };
 
 export default Footer;

@@ -16,7 +16,7 @@ export default function HomePage({ products, category }) {
           {category &&
             category?.map((cate) => (
               <Button type="dashed" ghost>
-                <Link rel="noopener noreferrer" href={`categories/${category}`}>
+                <Link rel="noopener noreferrer" href={`categories/${cate.Category}`}>
                   {cate.Category}
                 </Link>
               </Button>
