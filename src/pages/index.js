@@ -2,15 +2,26 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import RootLayout from "@/component/layout/RootLayout";
 import ProductCard from "@/component/ProductCard/ProductCard";
+import { Button } from "antd";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function HomePage({ products }) {
-  console.log(products);
+export default function HomePage({ products, category }) {
   return (
     <div>
       <div className="featuredProduct px-4 py-2">
         <h2>Featured Product</h2>
+        <div className="grid grid-cols-4 md:grid-cols-8 gap-4 my-4">
+          {category &&
+            category?.map((cate) => (
+              <Button type="dashed" ghost>
+                <Link rel="noopener noreferrer" href={`categories/${category}`}>
+                  {cate.Category}
+                </Link>
+              </Button>
+            ))}
+        </div>
         <div className="grid md:grid-cols-4 gap-4">
           {products &&
             products?.map((product) => (
@@ -27,13 +38,23 @@ HomePage.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:3000/api/products");
-  const data = await res.json();
+  try {
+    const res = await fetch("http://localhost:5000/products");
+    const data = await res.json();
 
-  return {
-    props: {
-      products: data.products,
-    },
-    revalidate: 10,
-  };
+    const categoryres = await fetch("http://localhost:5000/categories");
+    const categoryData = await categoryres.json();
+
+    return {
+      props: {
+        products: data.data,
+        category: categoryData.data,
+      },
+      revalidate: 10,
+    };
+  } catch {
+    return {
+      props: {},
+    };
+  }
 };
