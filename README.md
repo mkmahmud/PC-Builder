@@ -15,5 +15,6 @@ pnpm dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
+Live Url: https://pc-builder-jade.vercel.app/
 
 Backend Url: https://fokira-server-mahmudulmk4-gmailcom.vercel.app
