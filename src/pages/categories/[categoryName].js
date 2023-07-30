@@ -27,7 +27,7 @@ export const getServerSideProps = async (context) => {
   const { params } = context;
 
   const res = await fetch(
-    `http://localhost:5000/categories/${params.categoryName}`
+    `https://fokira-server-mahmudulmk4-gmailcom.vercel.app/categories/${params.categoryName}`
   );
   const data = await res.json();
 

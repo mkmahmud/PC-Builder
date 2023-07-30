@@ -44,10 +44,10 @@ HomePage.getLayout = function getLayout(page) {
 
 export const getStaticProps = async () => {
   try {
-    const res = await fetch("http://localhost:5000/products");
+    const res = await fetch("https://fokira-server-mahmudulmk4-gmailcom.vercel.app/products");
     const data = await res.json();
 
-    const categoryres = await fetch("http://localhost:5000/categories");
+    const categoryres = await fetch("https://fokira-server-mahmudulmk4-gmailcom.vercel.app/categories");
     const categoryData = await categoryres.json();
 
     return {
