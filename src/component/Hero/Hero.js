@@ -20,18 +20,18 @@ const Hero = () => {
     console.log(currentSlide);
   };
   return (
-    <Carousel afterChange={onChange}>
+    <Carousel afterChange={onChange} >
       <div>
-        <Image src={img1} alt={img1} height={400} width={1440}></Image>
+        <Image className="mx-auto block" src={img1} alt={img1} height={400} width={1440}></Image>
       </div>
       <div>
-        <Image src={img2} alt={img1} height={400} width={1440}></Image>
+        <Image className="mx-auto block" src={img2} alt={img1} height={400} width={1440}></Image>
       </div>
       <div>
-        <Image src={img3} alt={img1} height={400} width={1440}></Image>
+        <Image className="mx-auto block" src={img3} alt={img1} height={400} width={1440}></Image>
       </div>
       <div>
-        <Image src={img4} alt={img1} height={400} width={1440}></Image>
+        <Image className="mx-auto block" src={img4} alt={img1} height={400} width={1440}></Image>
       </div>
     </Carousel>
   );

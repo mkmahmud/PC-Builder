@@ -38,6 +38,8 @@ const SelectProductCard = ({ product }) => {
         margin: "auto",
         position: "relative",
       }}
+      
+      className="w-[400px] md:w-[350px]"
       cover={<Image src={img} alt={img} height={200} width={200}></Image>}
     >
       <Meta title={ProductName} />

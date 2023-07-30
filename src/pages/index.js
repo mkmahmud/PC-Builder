@@ -26,7 +26,7 @@ export default function HomePage({ products, category }) {
               </Button>
             ))}
         </div>
-        <div className="grid md:grid-cols-4 gap-4">
+        <div className="grid md:grid-cols-3 gap-4">
           {/* Render only the first 8 products */}
           {featuredProducts &&
             featuredProducts?.map((product) => (
