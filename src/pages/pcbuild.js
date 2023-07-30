@@ -4,8 +4,12 @@ import React from "react";
 import logo from "../assets/logo.png";
 import { Button } from "antd";
 import PcBuilderComponent from "@/component/PcBuilderComponent/PcBuilderComponent";
+import { useGetAllcategoriesQuery } from "@/redux/features/category/categoryApi";
 
 const PcBuild = () => {
+  const { data, isLoading, isError, error } =
+    useGetAllcategoriesQuery(undefined);
+
   return (
     <div className="pcBuild bg-white max-w-screen-lg m-2 p-4 rounded mx-auto text-black">
       <div>
@@ -13,7 +17,7 @@ const PcBuild = () => {
       </div>
       <div className="flex justify-between items-center my-2">
         <p>PC Builder - Build your own PC - New Egg</p>
-        <Button type="primary" disabled >
+        <Button type="primary" disabled>
           Build your PC
         </Button>
         <Button>
@@ -23,8 +27,9 @@ const PcBuild = () => {
       <div>
         <h4 className="p-2 bg-gray-200 ">CORE COMPONENTS</h4>
         <div>
-          <PcBuilderComponent></PcBuilderComponent>
-          <PcBuilderComponent></PcBuilderComponent>
+          {data?.data.map((da) => (
+            <PcBuilderComponent data={da}></PcBuilderComponent>
+          ))}
         </div>
       </div>
     </div>

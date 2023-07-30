@@ -1,39 +1,30 @@
-// components/Navbar.js
-
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import logo from "../../assets/logo.png";
-import { DownOutlined, SmileOutlined } from '@ant-design/icons';
-import { Dropdown, Space } from 'antd';
-
-const mycategories = [
-  "CPU or Processor",
-  "Motherboard",
-  "RAM",
-  "Power Supply Unit",
-  "Storage Device",
-  "Monitor",
-  "Others",
-];
-
-let items = [];
-
-mycategories.map((category) => {
-  items.push({
-    key: "1",
-    label: (
-      <Link
-        rel="noopener noreferrer"
-        href={`categories/${category}`}
-      >
-        {category}
-      </Link>
-    ),
-  });
-});
+import { DownOutlined, SmileOutlined } from "@ant-design/icons";
+import { Dropdown, Space } from "antd";
+import { useGetAllcategoriesQuery } from "@/redux/features/category/categoryApi";
 
 const Navbar = () => {
+  const { data, isLoading, isError, error } =
+    useGetAllcategoriesQuery(undefined);
+
+  let items = [];
+  data?.data?.map((category) => {
+    items.push({
+      key: { category },
+      label: (
+        <Link
+          rel="noopener noreferrer"
+          href={`categories/${category.Category}`}
+        >
+          {category.Category}
+        </Link>
+      ),
+    });
+  });
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
