@@ -4,6 +4,9 @@ import { Button } from "antd";
 import Link from "next/link";
 
 export default function HomePage({ products, category }) {
+  // Slice the products array to get only the first 8 products
+  const featuredProducts = products.slice(0, 8);
+
   return (
     <div>
       <div className="featuredProduct px-4 py-2">
@@ -19,8 +22,9 @@ export default function HomePage({ products, category }) {
             ))}
         </div>
         <div className="grid md:grid-cols-4 gap-4">
-          {products &&
-            products?.map((product) => (
+          {/* Render only the first 8 products */}
+          {featuredProducts &&
+            featuredProducts?.map((product) => (
               <ProductCard product={product} key={product._id}></ProductCard>
             ))}
         </div>

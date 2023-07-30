@@ -9,12 +9,18 @@ const pcBuilderSlice = createSlice({
   initialState,
   reducers: {
     addComponent: (state, action) => {
-      state.pcComponents.push(action.payload);
+      const newComponent = action.payload;
+      
+      const existingComponent = state.pcComponents.find(
+        (component) => component.Category === newComponent.Category
+      );
+
+      if (!existingComponent) {
+        state.pcComponents.push(newComponent);
+      }
     },
   },
 });
-
-
 
 export const { addComponent } = pcBuilderSlice.actions;
 
