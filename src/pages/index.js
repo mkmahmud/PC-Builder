@@ -1,3 +1,4 @@
+import Hero from "@/component/Hero/Hero";
 import RootLayout from "@/component/layout/RootLayout";
 import ProductCard from "@/component/ProductCard/ProductCard";
 import { Button } from "antd";
@@ -9,13 +10,17 @@ export default function HomePage({ products, category }) {
 
   return (
     <div>
+      <Hero></Hero>
       <div className="featuredProduct px-4 py-2">
         <h2>Featured Product</h2>
         <div className="grid grid-cols-4 md:grid-cols-8 gap-4 my-4">
           {category &&
             category?.map((cate) => (
               <Button type="dashed" ghost key={cate._id}>
-                <Link rel="noopener noreferrer" href={`categories/${cate.Category}`}>
+                <Link
+                  rel="noopener noreferrer"
+                  href={`categories/${cate.Category}`}
+                >
                   {cate.Category}
                 </Link>
               </Button>
