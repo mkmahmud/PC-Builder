@@ -2,6 +2,12 @@ import React from "react";
 import { Button, Card } from "antd";
 import Image from "next/image";
 import Link from "next/link";
+import { useAppDispatch } from "@/redux/hook";
+import { addComponent } from "@/redux/features/pcBuilder/pcBuilder";
+import { useRouter } from "next/router";
+
+
+
 const { Meta } = Card;
 const SelectProductCard = ({ product }) => {
   const {
@@ -13,6 +19,17 @@ const SelectProductCard = ({ product }) => {
     Status,
     Rating,
   } = product;
+
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+
+  const handleAddComponent = () => {
+    dispatch(addComponent(product));
+    router.push("/pcbuild");
+
+
+  };
+
   return (
     <Card
       hoverable
@@ -42,8 +59,13 @@ const SelectProductCard = ({ product }) => {
           )}
         </h3>
       </div>
-      <Button type="primary" size="large " className="w-full">
-        <Link href={`/product/${_id}`}>Add To Builder</Link>
+      <Button
+        onClick={handleAddComponent}
+        type="primary"
+        size="large "
+        className="w-full"
+      >
+        Add To Builder
       </Button>
     </Card>
   );

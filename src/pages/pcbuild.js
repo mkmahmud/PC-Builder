@@ -10,6 +10,8 @@ const PcBuild = () => {
   const { data, isLoading, isError, error } =
     useGetAllcategoriesQuery(undefined);
 
+    
+
   return (
     <div className="pcBuild bg-white max-w-screen-lg m-2 p-4 rounded mx-auto text-black">
       <div>

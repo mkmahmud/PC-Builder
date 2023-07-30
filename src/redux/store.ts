@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { api } from "./features/api/apiSlice";
+import pcbuilder from "./features/pcBuilder/pcBuilder";
 
 const store = configureStore({
   reducer: {
+    pcComponent: pcbuilder,
     [api.reducerPath]: api.reducer,
   },
   middleware: (getDefaultMiddleware) =>
