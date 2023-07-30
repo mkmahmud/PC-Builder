@@ -28,7 +28,7 @@ const PcBuilderComponent = ({ data }) => {
       {matchedComponent ? (
         <Card title={matchedComponent?.ProductName} bordered={false}>
           <div className="flex justify-between items-center">
-            <Image width={100} src={matchedComponent?.Image} />
+            <Image alt={matchedComponent?.Image} width={100} src={matchedComponent?.Image} />
             <h3 className="text-red-400">
               <strong>${matchedComponent?.Price}</strong>
             </h3>

@@ -38,7 +38,7 @@ const PcBuild = () => {
         <h4 className="p-2 bg-gray-200 ">CORE COMPONENTS</h4>
         <div>
           {data?.data.map((da) => (
-            <PcBuilderComponent data={da}></PcBuilderComponent>
+            <PcBuilderComponent key={da._id} data={da}></PcBuilderComponent>
           ))}
         </div>
       </div>

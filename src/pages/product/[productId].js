@@ -41,12 +41,12 @@ const ProductDetails = ({ data }) => {
           ${Price}.00
         </Descriptions.Item>
         <Descriptions.Item label="Key Fetures">
-          {KeyFeture && KeyFeture.map((feture) => <p>{feture}</p>)}
+          {KeyFeture && KeyFeture.map((feture, index) => <p key={index}>{feture}</p>)}
         </Descriptions.Item>
         <Descriptions.Item label="Reviews">
           {Reviews &&
-            Reviews.map((review) => (
-              <Col span={8}>
+            Reviews.map((review, index) => (
+              <Col key={index} span={8}>
                 <Card title={review.name} bordered={false}>
                   {review.comment}
                 </Card>

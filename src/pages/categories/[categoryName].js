@@ -3,7 +3,7 @@ import RootLayout from "@/component/layout/RootLayout";
 import React from "react";
 
 const CategoryName = ({ product, searchedCatecory }) => {
-  console.log(searchedCatecory);
+  
   return (
     <div className="m-4 ">
       <h2>Your Searched Product is: <strong className="text-orange-400">{searchedCatecory} </strong></h2>

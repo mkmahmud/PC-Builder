@@ -3,8 +3,9 @@ import Link from "next/link";
 import { useState } from "react";
 import logo from "../../assets/logo.png";
 import { DownOutlined, SmileOutlined } from "@ant-design/icons";
-import { Dropdown, Space } from "antd";
+import { Button, Dropdown, Space } from "antd";
 import { useGetAllcategoriesQuery } from "@/redux/features/category/categoryApi";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const Navbar = () => {
   const { data, isLoading, isError, error } =
@@ -30,6 +31,8 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const { data: session } = useSession();
 
   return (
     <nav className=" px-4  bg-blue-500">
@@ -70,6 +73,20 @@ const Navbar = () => {
               <Link href="/contact" className="text-white ">
                 Contact
               </Link>
+            </li>
+
+            <li className=" block p-2 mx-2 bg-blue-400">
+              {session?.user?.email ? (
+                <Button onClick={() => signOut()}>Sign out</Button>
+              ) : (
+                <Button
+                  onClick={() => {
+                    signIn("github");
+                  }}
+                >
+                  Sign in
+                </Button>
+              )}
             </li>
           </ul>
         </div>
