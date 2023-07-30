@@ -83,7 +83,7 @@ const Navbar = () => {
           </ul>
         </div>
         <Link
-          href="/contact"
+          href="/pcbuild"
           className="text-white bg-red-800 block p-2 no-underline "
         >
           PC BUILD
